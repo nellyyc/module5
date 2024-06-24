@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar prefHeight="28.0" prefWidth="599.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File" />
+          <Menu mnemonicParsing="false" text="Edit" />
+            <Menu mnemonicParsing="false" text="Theme" />
+          <Menu mnemonicParsing="false" text="Help" />
+        </menus>
+      </MenuBar>
+      <SplitPane layoutX="-31.0" layoutY="29.0" prefHeight="373.0" prefWidth="123.0" style="-fx-background-color: orange;" />
+      <SplitPane layoutX="457.0" layoutY="26.0" prefHeight="375.0" prefWidth="145.0" style="-fx-background-color: green;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="26.0">
+         <effect>
+            <Blend />
+         </effect>
+      </SplitPane>
+      <SplitPane dividerPositions="0.07260273972602739" layoutX="91.0" layoutY="32.0" orientation="VERTICAL" prefHeight="367.0" prefWidth="366.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: grey;">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="ID" textFill="#fcfcfa">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="5.0" text="First Name" textFill="#f5efef">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="110.0" layoutY="5.0" text="Last Name" textFill="#f8f7f7">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="178.0" layoutY="5.0" text="Department" textFill="#fffefe">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="248.0" layoutY="5.0" text="Major" textFill="#f8f6f6">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="306.0" layoutY="5.0" text="Email" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="143.0" layoutY="161.0" text="No content in table">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</fx:root>
