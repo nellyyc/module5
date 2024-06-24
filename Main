@@ -1,0 +1,70 @@
+package application;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("This is a JavaFX Application");
+
+        // Create MenuBar
+        MenuBar menuBar = new MenuBar();
+
+        // File Menu
+        Menu fileMenu = new Menu("File");
+        MenuItem newFile = new MenuItem("New");
+        MenuItem openFile = new MenuItem("Open");
+        MenuItem exitApp = new MenuItem("Exit");
+        exitApp.setOnAction(e -> System.exit(0)); // Exit action
+        fileMenu.getItems().addAll(newFile, openFile, new SeparatorMenuItem(), exitApp);
+
+        // Edit Menu
+        Menu editMenu = new Menu("Edit");
+        MenuItem cut = new MenuItem("Cut");
+        MenuItem copy = new MenuItem("Copy");
+        MenuItem paste = new MenuItem("Paste");
+        editMenu.getItems().addAll(cut, copy, paste);
+
+        // Help Menu
+        Menu helpMenu = new Menu("Help");
+        MenuItem about = new MenuItem("About");
+        about.setOnAction(e -> showAlert("About", "This is a JavaFX application.")); // About action
+        helpMenu.getItems().add(about);
+
+        menuBar.getMenus().addAll(fileMenu, editMenu, helpMenu);
+
+        // Create TableView
+        TableView<String> tableView = new TableView<>();
+        TableColumn<String, String> column1 = new TableColumn<>("Column 1");
+        TableColumn<String, String> column2 = new TableColumn<>("Column 2");
+        TableColumn<String, String> column3 = new TableColumn<>("Column 3");
+        tableView.getColumns().addAll(column1, column2, column3);
+
+        // Layout
+        VBox vbox = new VBox(menuBar, tableView);
+        Scene scene = new Scene(vbox, 800, 600);
+
+        // Apply CSS
+        scene.getStylesheets().add(getClass().getResource("/resources/style.css").toExternalForm());
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
